@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Copy, Mail } from "lucide-react";
+import { Check, Copy, Mail, Phone } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -49,6 +49,14 @@ export default function Contact() {
                 {copied ? <Check size={16} className="text-accent" /> : <Copy size={16} />}
               </button>
             </div>
+
+            <a
+              href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+              className="mt-4 inline-flex items-center gap-2 font-mono text-sm text-muted transition-colors hover:text-accent"
+            >
+              <Phone size={15} />
+              {profile.phone}
+            </a>
           </div>
 
           <div className="flex flex-col justify-center gap-4">

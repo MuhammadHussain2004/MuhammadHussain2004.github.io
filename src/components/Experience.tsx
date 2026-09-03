@@ -15,9 +15,14 @@ export default function Experience() {
               <Reveal key={item.title} delay={i * 0.08}>
                 <li className="relative pl-8 sm:pl-10">
                   <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full border-2 border-accent bg-bg sm:h-[18px] sm:w-[18px]" />
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                    {item.period}
-                  </p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                      {item.period}
+                    </p>
+                    <span className="rounded-sm border border-line bg-bg-raised px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-faint">
+                      {item.tag}
+                    </span>
+                  </div>
                   <h3 className="mt-2 font-heading text-xl font-semibold text-ink">
                     {item.title}
                   </h3>
