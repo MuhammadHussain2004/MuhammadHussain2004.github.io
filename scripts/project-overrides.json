@@ -30,8 +30,8 @@
     },
     "students-Records-app": {
       "title": "Student Records App",
-      "description": "A typed CRUD dashboard for managing student records with search and form validation — built in TypeScript to keep the data model honest end to end.",
-      "tags": ["TypeScript", "React"]
+      "description": "A type-safe full-stack app (Next.js App Router, TypeScript, MongoDB/Mongoose) with a typed Student schema and REST-style API routes for full CRUD, plus an admin dashboard surfacing live enrollment metrics — total, active, inactive, new-this-month — with search and end-to-end form validation.",
+      "tags": ["Next.js", "TypeScript", "MongoDB", "Mongoose"]
     },
     "MuhammadHussain-mern-10pshine": {
       "title": "NoteFlow — 10Pearls Internship Project",

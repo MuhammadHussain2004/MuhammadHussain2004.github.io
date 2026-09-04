@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { profile } from "../data";
 
@@ -10,6 +10,8 @@ const links = [
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
+
+const RESUME_URL = "/Muhammad-Hussain-Resume.pdf";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,6 +49,15 @@ export default function Nav() {
         </ul>
 
         <div className="hidden items-center gap-4 md:flex">
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 font-mono text-[13px] text-muted transition-colors hover:text-accent"
+          >
+            <FileText size={14} />
+            Resume
+          </a>
           <a
             href={profile.github}
             target="_blank"
@@ -97,6 +108,15 @@ export default function Nav() {
               </li>
             ))}
           </ul>
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 flex items-center gap-1.5 font-mono text-sm text-muted hover:text-accent"
+          >
+            <FileText size={15} />
+            Resume
+          </a>
           <div className="mt-5 flex items-center gap-5">
             <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted">
               <FaGithub size={18} />
