@@ -20,6 +20,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OWNER = "MuhammadHussain2004";
 const OUTPUT_JSON = path.join(ROOT, "src/generated/projects.json");
+const STATS_JSON = path.join(ROOT, "src/generated/stats.json");
 const SCREENSHOT_DIR = path.join(ROOT, "public/projects-auto");
 
 const overrides = JSON.parse(readFileSync(path.join(__dirname, "project-overrides.json"), "utf8"));
@@ -157,10 +158,22 @@ async function analyzeRepo(repo) {
   return { score, tags, frontendSignal, backendSignal };
 }
 
+async function fetchAllRepos() {
+  const all = [];
+  for (let page = 1; ; page++) {
+    const batch = await ghFetch(`/users/${OWNER}/repos?per_page=100&type=owner&sort=pushed&page=${page}`);
+    if (!Array.isArray(batch) || batch.length === 0) break;
+    all.push(...batch);
+    if (batch.length < 100) break;
+  }
+  return all;
+}
+
 async function main() {
   console.log(`Fetching repos for ${OWNER}...`);
-  const repos = await ghFetch(`/users/${OWNER}/repos?per_page=100&type=owner&sort=pushed`);
-  if (!Array.isArray(repos)) throw new Error("Unexpected repos response");
+  const repos = await fetchAllRepos();
+  if (repos.length === 0) throw new Error("Unexpected repos response");
+  console.log(`${repos.length} public repos total.`);
 
   const candidates = repos.filter(
     (r) =>
@@ -257,6 +270,12 @@ async function main() {
 
   writeFileSync(OUTPUT_JSON, JSON.stringify(results, null, 2) + "\n");
   console.log(`Wrote ${results.length} projects to ${path.relative(ROOT, OUTPUT_JSON)}`);
+
+  // Drives the "public repositories" stat on the About section — sourced
+  // live from GitHub every run instead of a number typed once by hand,
+  // which is exactly the kind of thing that goes stale.
+  writeFileSync(STATS_JSON, JSON.stringify({ publicRepos: repos.length }, null, 2) + "\n");
+  console.log(`Wrote publicRepos=${repos.length} to ${path.relative(ROOT, STATS_JSON)}`);
 
   const keepFiles = new Set(results.map((r) => `${r.slug}.png`));
   for (const file of readdirSync(SCREENSHOT_DIR)) {

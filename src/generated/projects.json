@@ -1,5 +1,21 @@
 [
   {
+    "slug": "muhammadhussain-mern-10pshine",
+    "title": "NoteFlow — 10Pearls Internship Project",
+    "description": "Built during my MERN Stack Development internship at 10Pearls (10Shine Program): a full-stack notes application with JWT authentication, email verification, and full CRUD, plus data import/export and user profile management.",
+    "image": "/projects-auto/muhammadhussain-mern-10pshine.png",
+    "tags": [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "JWT"
+    ],
+    "live": "https://muhammad-hussain-mern-10pshine.vercel.app",
+    "code": "https://github.com/MuhammadHussain2004/MuhammadHussain-mern-10pshine",
+    "featured": true
+  },
+  {
     "slug": "complain-management-system-mern",
     "title": "Smart Complaint Management System (MERN Stack)",
     "description": "A role-based complaint-management platform: citizens file complaints, staff move them through a Pending → In Progress → Resolved/Rejected lifecycle, and admins approve accounts and oversee the queue — across 15 REST endpoints guarded by JWT auth and bcrypt password hashing.",
@@ -32,22 +48,6 @@
     ],
     "live": "https://buildvolt.online",
     "code": "https://github.com/MuhammadHussain2004/buildbot",
-    "featured": true
-  },
-  {
-    "slug": "muhammadhussain-mern-10pshine",
-    "title": "NoteFlow — 10Pearls Internship Project",
-    "description": "Built during my MERN Stack Development internship at 10Pearls (10Shine Program): a full-stack notes application with JWT authentication, email verification, and full CRUD, plus data import/export and user profile management.",
-    "image": "/projects-auto/muhammadhussain-mern-10pshine.png",
-    "tags": [
-      "React",
-      "Node.js",
-      "Express",
-      "MySQL",
-      "JWT"
-    ],
-    "live": "https://muhammad-hussain-mern-10pshine.vercel.app",
-    "code": "https://github.com/MuhammadHussain2004/MuhammadHussain-mern-10pshine",
     "featured": false
   },
   {

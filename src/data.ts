@@ -16,8 +16,13 @@ export const profile = {
   ],
 };
 
+// publicRepos is regenerated live from GitHub by scripts/generate-projects.mjs
+// on every run (see src/generated/stats.json) — it never goes stale like a
+// hand-typed number would.
+import generatedStats from "./generated/stats.json";
+
 export const stats = [
-  { value: "48+", label: "public repositories" },
+  { value: `${generatedStats.publicRepos}+`, label: "public repositories" },
   { value: "10+", label: "shipped full-stack apps" },
   { value: "3.7/4.0", label: "CGPA, BSCS" },
 ];
