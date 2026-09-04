@@ -1,17 +1,18 @@
 export const profile = {
   name: "Muhammad Hussain",
   fullName: "Muhammad Hussain Khan Lodhi",
-  role: "Full-Stack Developer & Software Engineer",
+  role: "Software Engineer",
+  secondaryRoles: ["Full-Stack Developer", "MERN Stack Specialist"],
   location: "Karachi, Pakistan",
   email: "muhammadhussaintech@gmail.com",
   phone: "+92 324 3249217",
   github: "https://github.com/MuhammadHussain2004",
   linkedin: "https://www.linkedin.com/in/muhammad-hussain-khan-lodhi-139261252",
   tagline:
-    "I ship production web applications end-to-end — frontend, backend, database, and deployment — with particular depth in the MERN stack.",
+    "I design and ship reliable software — from data structures and clean API design to full-stack MERN applications running in production.",
   bio: [
-    "I'm a full-stack developer and software engineer with a BSCS foundation (CGPA 3.7/4.0, Sindh Madressatul Islam University) in data structures, object-oriented design, and database systems. That shows up in how I build: React on the front, Node/Express on the back, MongoDB or MySQL underneath, wired together with authentication, clean REST APIs, and interfaces people actually enjoy using.",
-    "I picked up production habits early: during my internship at 10Pearls I designed the data model and REST API for a full-stack notes app with JWT auth and email verification, backed by unit/integration tests and SonarQube quality gates. I've since designed multi-service systems of my own — a deterministic recommendation engine, a role-based access-control platform — and I'm IBM-certified in full-stack JavaScript development. I lean on AI-assisted tools like Claude and Copilot to move faster without cutting corners.",
+    "I'm a software engineer with a BSCS foundation (CGPA 3.7/4.0, Sindh Madressatul Islam University) in data structures, object-oriented design, and database systems — the fundamentals that shape how I design software, not just how I glue frameworks together. In practice, that shows up as full-stack MERN applications: React on the front, Node/Express on the back, MongoDB or MySQL underneath, wired together with authentication, clean REST APIs, and interfaces people actually enjoy using.",
+    "I've designed multi-service systems of my own — a deterministic recommendation engine, a role-based access-control platform — with the same rigor I picked up during my internship at 10Pearls, where I designed the data model and REST API for a full-stack notes app with JWT auth and email verification, backed by unit/integration tests and SonarQube quality gates. I'm IBM-certified in full-stack JavaScript development, and I lean on AI-assisted tools like Claude and Copilot to move faster without cutting corners.",
   ],
 };
 
@@ -48,6 +49,10 @@ export const skills = [
     items: ["JavaScript", "TypeScript", "Java", "C++", "C", "SQL"],
   },
   {
+    category: "Core CS & Quality",
+    items: ["Data Structures", "OOP", "Database Design", "Mocha/Chai", "SonarQube", "Unit Testing"],
+  },
+  {
     category: "Frontend",
     items: ["React", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
   },
@@ -58,10 +63,6 @@ export const skills = [
   {
     category: "Databases",
     items: ["MongoDB", "MySQL", "SQL Server"],
-  },
-  {
-    category: "Core CS & Quality",
-    items: ["Data Structures", "OOP", "Database Design", "Mocha/Chai", "SonarQube", "Unit Testing"],
   },
   {
     category: "Tools & Deployment",

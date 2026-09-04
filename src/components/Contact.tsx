@@ -26,7 +26,7 @@ export default function Contact() {
         <Reveal className="grid grid-cols-1 gap-14 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <h3 className="text-balance font-heading text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-              Have a project in mind, or just want to talk shop about full-stack development?
+              Have a role in mind, or just want to talk shop about software engineering?
             </h3>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted">
               My inbox is open — whether it's a full-time role, freelance work, or a

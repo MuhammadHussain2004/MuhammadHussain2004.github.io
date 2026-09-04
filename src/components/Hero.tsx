@@ -19,7 +19,7 @@ export default function Hero() {
             className="mb-6 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-faint"
           >
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-            Available for full-stack opportunities
+            Available for software engineering opportunities
           </motion.p>
 
           <motion.h1
@@ -47,7 +47,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-faint"
           >
-            MERN Stack Specialist
+            {profile.secondaryRoles.join(" · ")}
           </motion.p>
 
           <motion.p
@@ -112,7 +112,7 @@ export default function Hero() {
               <p className="text-muted">
                 <span className="text-accent">$</span> cat role.txt
               </p>
-              <p className="text-ink">Full-Stack Developer & Software Engineer, Karachi 🇵🇰</p>
+              <p className="text-ink">Software Engineer — Full-Stack / MERN, Karachi 🇵🇰</p>
               <p className="text-muted">
                 <span className="text-accent">$</span> cat stack.json
               </p>
