@@ -1,7 +1,7 @@
 [
   {
     "slug": "complain-management-system-mern",
-    "title": "Smart Complaint Management System",
+    "title": "Smart Complaint Management System (MERN Stack)",
     "description": "A role-based complaint-management platform: citizens file complaints, staff move them through a Pending → In Progress → Resolved/Rejected lifecycle, and admins approve accounts and oversee the queue — across 15 REST endpoints guarded by JWT auth and bcrypt password hashing.",
     "image": "/projects-auto/complain-management-system-mern.png",
     "tags": [
@@ -52,7 +52,7 @@
   },
   {
     "slug": "shopco-ecommerce",
-    "title": "Shop.co E-Commerce Platform",
+    "title": "Shop.co E-Commerce Platform (MERN Stack)",
     "description": "A pixel-faithful rebuild of a community Figma template as a full MERN application — product filtering, search and pagination, reviews, promo-code validation, and order placement, backed by a MongoDB Atlas-seeded catalog.",
     "image": "/projects-auto/shopco-ecommerce.png",
     "tags": [

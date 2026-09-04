@@ -9,10 +9,10 @@ export const profile = {
   github: "https://github.com/MuhammadHussain2004",
   linkedin: "https://www.linkedin.com/in/muhammad-hussain-khan-lodhi-139261252",
   tagline:
-    "I design and ship reliable software — from data structures and clean API design to full-stack MERN applications running in production.",
+    "I design and ship reliable software — a strong foundation in data structures and database systems, with particular depth in full-stack MERN development.",
   bio: [
-    "I'm a software engineer with a BSCS foundation (CGPA 3.7/4.0, Sindh Madressatul Islam University) in data structures, object-oriented design, and database systems — the fundamentals that shape how I design software, not just how I glue frameworks together. In practice, that shows up as full-stack MERN applications: React on the front, Node/Express on the back, MongoDB or MySQL underneath, wired together with authentication, clean REST APIs, and interfaces people actually enjoy using.",
-    "I've designed multi-service systems of my own — a deterministic recommendation engine, a role-based access-control platform — with the same rigor I picked up during my internship at 10Pearls, where I designed the data model and REST API for a full-stack notes app with JWT auth and email verification, backed by unit/integration tests and SonarQube quality gates. I'm IBM-certified in full-stack JavaScript development, and I lean on AI-assisted tools like Claude and Copilot to move faster without cutting corners.",
+    "I'm a software engineer with a strong foundation in data structures, object-oriented design, and database systems (BSCS, CGPA 3.7/4.0, Sindh Madressatul Islam University), and particular depth in full-stack MERN development — React, Node.js, Express, MongoDB. I've designed multi-service systems of my own, including a deterministic recommendation engine and a role-based access-control platform, with production experience across Java and C/C++ as well.",
+    "I picked up production habits early: during my internship at 10Pearls I designed the data model and REST API for a full-stack notes app with JWT auth and email verification, backed by unit/integration tests and SonarQube quality gates. I'm IBM-certified in full-stack JavaScript development, and I lean on AI-assisted tools like Claude and Copilot to move faster without cutting corners.",
   ],
 };
 
@@ -49,24 +49,24 @@ export const skills = [
     items: ["JavaScript", "TypeScript", "Java", "C++", "C", "SQL"],
   },
   {
-    category: "Core CS & Quality",
-    items: ["Data Structures", "OOP", "Database Design", "Mocha/Chai", "SonarQube", "Unit Testing"],
+    category: "Core CS",
+    items: ["Data Structures", "OOP", "REST API Design", "Database Design", "Unit Testing"],
   },
   {
-    category: "Frontend",
-    items: ["React", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs"],
+    category: "MERN / Full-Stack",
+    items: ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
   },
   {
     category: "Databases",
-    items: ["MongoDB", "MySQL", "SQL Server"],
+    items: ["MySQL", "SQL Server"],
   },
   {
-    category: "Tools & Deployment",
-    items: ["Git", "GitHub", "Postman", "Vercel", "VS Code", "XAMPP"],
+    category: "Developer Tools",
+    items: ["Git", "GitHub", "Postman", "SonarQube", "Mocha/Chai", "VS Code", "NetBeans"],
+  },
+  {
+    category: "Deployment / Cloud",
+    items: ["Vercel"],
   },
 ];
 
@@ -108,7 +108,7 @@ export const timeline: TimelineItem[] = [
     title: "MERN Stack Development Intern — 10Shine Program",
     place: "10Pearls",
     description:
-      "Designed and implemented the data model and REST API for a full-stack notes application (Node.js, Express, MySQL) with JWT auth, email verification, and CRUD logic. Authored unit/integration tests (Mocha, Chai, NYC) and resolved issues flagged by SonarQube.",
+      "Designed and implemented the data model and REST API for a full-stack notes application (React, Node.js, Express, MySQL) with JWT auth, email verification, and full CRUD. Authored unit/integration tests (Mocha, Chai, NYC) and resolved issues flagged by SonarQube.",
     tag: "Experience",
   },
   {
@@ -123,7 +123,7 @@ export const timeline: TimelineItem[] = [
     title: "Self-Directed Learning & Development",
     place: "Independent Study",
     description:
-      "Designed, built, and deployed 10+ responsive web applications independently — from authentication systems to e-commerce platforms — applying modern UI/UX and REST API practices.",
+      "Designed, built, and deployed 10+ full-stack MERN applications (React, Node.js, MongoDB/MySQL) independently, applying data structures, OOP, and database design coursework to real projects.",
     tag: "Independent",
   },
 ];

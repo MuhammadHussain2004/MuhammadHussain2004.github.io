@@ -9,12 +9,12 @@
       "tags": ["Node.js", "Express", "Turso (libSQL)", "React", "TypeScript", "WordPress/WooCommerce", "JWT"]
     },
     "Complain-Management-System-MERN": {
-      "title": "Smart Complaint Management System",
+      "title": "Smart Complaint Management System (MERN Stack)",
       "description": "A role-based complaint-management platform: citizens file complaints, staff move them through a Pending → In Progress → Resolved/Rejected lifecycle, and admins approve accounts and oversee the queue — across 15 REST endpoints guarded by JWT auth and bcrypt password hashing.",
       "tags": ["React", "Vite", "Express", "MongoDB", "Mongoose", "JWT"]
     },
     "shopco-ecommerce": {
-      "title": "Shop.co E-Commerce Platform",
+      "title": "Shop.co E-Commerce Platform (MERN Stack)",
       "description": "A pixel-faithful rebuild of a community Figma template as a full MERN application — product filtering, search and pagination, reviews, promo-code validation, and order placement, backed by a MongoDB Atlas-seeded catalog.",
       "tags": ["React", "Vite", "Express", "MongoDB Atlas", "REST API"]
     },
