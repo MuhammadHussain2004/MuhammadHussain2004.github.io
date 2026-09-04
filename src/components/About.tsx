@@ -6,7 +6,7 @@ import { profile, stats } from "../data";
 const facts = [
   { icon: MapPinned, label: "Based in", value: "Karachi, Pakistan" },
   { icon: GraduationCap, label: "Education", value: "BSCS, Sindh Madressatul Islam University" },
-  { icon: Layers, label: "Focus", value: "MERN Stack · TypeScript" },
+  { icon: Layers, label: "Focus", value: "Full-Stack Dev · Software Engineering" },
   { icon: Sparkles, label: "Currently", value: "SMIT — Modern Web & App Dev" },
 ];
 

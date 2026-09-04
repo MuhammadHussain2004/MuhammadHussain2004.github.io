@@ -37,7 +37,17 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.12 }}
             className="mt-4 font-mono text-lg text-accent sm:text-xl"
           >
-            MERN Stack Developer<span className="caret">_</span>
+            {profile.role}
+            <span className="caret">_</span>
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-faint"
+          >
+            MERN Stack Specialist
           </motion.p>
 
           <motion.p
@@ -102,7 +112,7 @@ export default function Hero() {
               <p className="text-muted">
                 <span className="text-accent">$</span> cat role.txt
               </p>
-              <p className="text-ink">MERN Stack Developer, Karachi 🇵🇰</p>
+              <p className="text-ink">Full-Stack Developer & Software Engineer, Karachi 🇵🇰</p>
               <p className="text-muted">
                 <span className="text-accent">$</span> cat stack.json
               </p>

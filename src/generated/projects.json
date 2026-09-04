@@ -1,0 +1,96 @@
+[
+  {
+    "slug": "complain-management-system-mern",
+    "title": "Smart Complaint Management System",
+    "description": "A role-based complaint-management platform: citizens file complaints, staff move them through a Pending → In Progress → Resolved/Rejected lifecycle, and admins approve accounts and oversee the queue — across 15 REST endpoints guarded by JWT auth and bcrypt password hashing.",
+    "image": "/projects-auto/complain-management-system-mern.png",
+    "tags": [
+      "React",
+      "Vite",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JWT"
+    ],
+    "live": "https://scms-frontend-rho.vercel.app",
+    "code": "https://github.com/MuhammadHussain2004/Complain-Management-System-MERN",
+    "featured": true
+  },
+  {
+    "slug": "muhammadhussain-mern-10pshine",
+    "title": "NoteFlow — 10Pearls Internship Project",
+    "description": "Built during my MERN Stack Development internship at 10Pearls (10Shine Program): a full-stack notes application with JWT authentication, email verification, and full CRUD, plus data import/export and user profile management.",
+    "image": "/projects-auto/muhammadhussain-mern-10pshine.png",
+    "tags": [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "JWT"
+    ],
+    "live": "https://muhammad-hussain-mern-10pshine.vercel.app",
+    "code": "https://github.com/MuhammadHussain2004/MuhammadHussain-mern-10pshine",
+    "featured": true
+  },
+  {
+    "slug": "shopco-ecommerce",
+    "title": "Shop.co E-Commerce Platform",
+    "description": "A pixel-faithful rebuild of a community Figma template as a full MERN application — product filtering, search and pagination, reviews, promo-code validation, and order placement, backed by a MongoDB Atlas-seeded catalog.",
+    "image": "/projects-auto/shopco-ecommerce.png",
+    "tags": [
+      "React",
+      "Vite",
+      "Express",
+      "MongoDB Atlas",
+      "REST API"
+    ],
+    "live": "https://frontend-ten-cyan-64.vercel.app",
+    "code": "https://github.com/MuhammadHussain2004/shopco-ecommerce",
+    "featured": false
+  },
+  {
+    "slug": "students-records-app",
+    "title": "Student Records App",
+    "description": "A typed CRUD dashboard for managing student records with search and form validation — built in TypeScript to keep the data model honest end to end.",
+    "image": "/projects-auto/students-records-app.png",
+    "tags": [
+      "TypeScript",
+      "React"
+    ],
+    "live": "https://studentsrecordsapp-teal.vercel.app",
+    "code": "https://github.com/MuhammadHussain2004/students-Records-app",
+    "featured": false
+  },
+  {
+    "slug": "buildbot",
+    "title": "BuildVolt — PC-Build Recommendation SaaS",
+    "description": "Our final year project, built with a 2-person team: a deterministic compatibility engine that infers CPU/RAM/PSU specs from catalog text and assembles budget-capped, safety-checked PC builds — plus a WordPress/WooCommerce plugin and a React + TypeScript store dashboard for catalog sync, CSV import, and analytics.",
+    "image": "/projects-auto/buildbot.png",
+    "tags": [
+      "Node.js",
+      "Express",
+      "Turso (libSQL)",
+      "React",
+      "TypeScript",
+      "WordPress/WooCommerce",
+      "JWT"
+    ],
+    "live": "https://buildvolt.online",
+    "code": "https://github.com/MuhammadHussain2004/buildbot",
+    "featured": false
+  },
+  {
+    "slug": "multi-pages-website-react",
+    "title": "Multi-Page E-Commerce Website",
+    "description": "A multi-page storefront built in React during my NAVTTC-affiliated full-stack training — catalog, product detail, and cart flows wired together with client-side routing.",
+    "image": "/projects-auto/multi-pages-website-react.png",
+    "tags": [
+      "React",
+      "React Router",
+      "CSS"
+    ],
+    "live": "https://multi-pages-website-react.vercel.app",
+    "code": "https://github.com/MuhammadHussain2004/Multi-pages-website-react",
+    "featured": false
+  }
+]

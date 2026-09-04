@@ -1,0 +1,42 @@
+{
+  "maxProjects": 6,
+  "minScore": 3,
+  "excludeSlugs": ["paradise-nursery", "Wanderly-Travel-Recommendation", "MuhammadHussain2004.github.io"],
+  "overrides": {
+    "buildbot": {
+      "title": "BuildVolt — PC-Build Recommendation SaaS",
+      "description": "Our final year project, built with a 2-person team: a deterministic compatibility engine that infers CPU/RAM/PSU specs from catalog text and assembles budget-capped, safety-checked PC builds — plus a WordPress/WooCommerce plugin and a React + TypeScript store dashboard for catalog sync, CSV import, and analytics.",
+      "tags": ["Node.js", "Express", "Turso (libSQL)", "React", "TypeScript", "WordPress/WooCommerce", "JWT"]
+    },
+    "Complain-Management-System-MERN": {
+      "title": "Smart Complaint Management System",
+      "description": "A role-based complaint-management platform: citizens file complaints, staff move them through a Pending → In Progress → Resolved/Rejected lifecycle, and admins approve accounts and oversee the queue — across 15 REST endpoints guarded by JWT auth and bcrypt password hashing.",
+      "tags": ["React", "Vite", "Express", "MongoDB", "Mongoose", "JWT"]
+    },
+    "shopco-ecommerce": {
+      "title": "Shop.co E-Commerce Platform",
+      "description": "A pixel-faithful rebuild of a community Figma template as a full MERN application — product filtering, search and pagination, reviews, promo-code validation, and order placement, backed by a MongoDB Atlas-seeded catalog.",
+      "tags": ["React", "Vite", "Express", "MongoDB Atlas", "REST API"]
+    },
+    "Multi-pages-website-react": {
+      "title": "Multi-Page E-Commerce Website",
+      "description": "A multi-page storefront built in React during my NAVTTC-affiliated full-stack training — catalog, product detail, and cart flows wired together with client-side routing.",
+      "tags": ["React", "React Router", "CSS"]
+    },
+    "full-stack-auth": {
+      "title": "Full-Stack Auth",
+      "description": "A self-contained authentication reference app: signup, login, JWT-protected profile routes, and persisted sessions — the pattern I reuse as the backbone for every app that needs real users.",
+      "tags": ["React", "Vite", "Express", "JWT"]
+    },
+    "students-Records-app": {
+      "title": "Student Records App",
+      "description": "A typed CRUD dashboard for managing student records with search and form validation — built in TypeScript to keep the data model honest end to end.",
+      "tags": ["TypeScript", "React"]
+    },
+    "MuhammadHussain-mern-10pshine": {
+      "title": "NoteFlow — 10Pearls Internship Project",
+      "description": "Built during my MERN Stack Development internship at 10Pearls (10Shine Program): a full-stack notes application with JWT authentication, email verification, and full CRUD, plus data import/export and user profile management.",
+      "tags": ["React", "Node.js", "Express", "MySQL", "JWT"]
+    }
+  }
+}
