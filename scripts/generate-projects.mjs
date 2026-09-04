@@ -12,7 +12,7 @@
 // never breaks the deploy.
 
 import { chromium } from "playwright";
-import { mkdirSync, writeFileSync, readFileSync, existsSync } from "fs";
+import { mkdirSync, writeFileSync, readFileSync, existsSync, readdirSync, unlinkSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -98,20 +98,23 @@ function humanize(name) {
 
 async function analyzeRepo(repo) {
   const contents = (await ghFetch(`/repos/${OWNER}/${repo.name}/contents`).catch(() => null)) || [];
-  const dirNames = contents.filter((c) => c.type === "dir").map((c) => c.name.toLowerCase());
+  const dirEntries = contents.filter((c) => c.type === "dir").map((c) => c.name);
+  const dirNames = dirEntries.map((d) => d.toLowerCase());
   const fileNames = contents.filter((c) => c.type === "file").map((c) => c.name.toLowerCase());
 
-  const frontendDir = dirNames.find((d) => ["frontend", "client", "web"].includes(d));
-  const backendDir = dirNames.find((d) => ["backend", "server", "api"].includes(d));
-
-  const [rootPkg, frontendPkg, backendPkg] = await Promise.all([
+  // Real repos name their service folders all sorts of things (server,
+  // dashboard, widget, plugin, ...) — rather than guess a fixed list, probe
+  // every top-level directory's package.json (bounded, these are cheap
+  // reads) plus root, and let the aggregated dependencies speak for
+  // themselves.
+  const dirsToProbe = dirEntries.slice(0, 8);
+  const [rootPkg, ...dirPkgs] = await Promise.all([
     fetchPackageJson(repo.name, null),
-    frontendDir ? fetchPackageJson(repo.name, frontendDir) : null,
-    backendDir ? fetchPackageJson(repo.name, backendDir) : null,
+    ...dirsToProbe.map((d) => fetchPackageJson(repo.name, d)),
   ]);
 
   const allDeps = new Set();
-  for (const pkg of [rootPkg, frontendPkg, backendPkg]) {
+  for (const pkg of [rootPkg, ...dirPkgs]) {
     if (!pkg) continue;
     for (const dep of Object.keys({ ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) })) {
       allDeps.add(dep.toLowerCase());
@@ -123,9 +126,11 @@ async function analyzeRepo(repo) {
   const nonJsBackendFile = fileNames.some((f) =>
     ["requirements.txt", "manage.py", "composer.json"].includes(f) || f.endsWith(".php")
   );
+  const looksLikeFrontendDir = dirNames.some((d) => /front|client|dashboard|^web$|^app$|^ui$/i.test(d));
+  const looksLikeBackendDir = dirNames.some((d) => /back|server|^api$/i.test(d));
 
-  const frontendSignal = hasAny(FRONTEND_DEPS) || fileNames.includes("index.html") || Boolean(frontendDir);
-  const backendSignal = hasAny(BACKEND_DEPS) || Boolean(backendDir) || nonJsBackendFile;
+  const frontendSignal = hasAny(FRONTEND_DEPS) || fileNames.includes("index.html") || looksLikeFrontendDir;
+  const backendSignal = hasAny(BACKEND_DEPS) || looksLikeBackendDir || nonJsBackendFile;
   const dbSignal = hasAny(DB_DEPS) || /mongo|mysql|postgres|sql server/i.test(repo.description || "");
   const authSignal = hasAny(AUTH_DEPS) || /\bjwt\b|\bauth\b/i.test(repo.description || "");
 
@@ -186,12 +191,23 @@ async function main() {
     }
   }
 
+  // Genuinely full-stack repos (both a frontend and a backend detected)
+  // always rank ahead of everything else. Only if there aren't enough of
+  // those to fill every slot does a live, decent-scoring but not-fully-
+  // full-stack repo backfill the remainder — the showcase always tries to
+  // show MAX_PROJECTS, it just prefers full-stack work for every slot it can.
   const qualified = scored
     .filter((s) => s.score >= MIN_SCORE)
-    .sort((a, b) => b.score - a.score || new Date(b.repo.pushed_at) - new Date(a.repo.pushed_at))
+    .sort((a, b) => {
+      const aFull = a.frontendSignal && a.backendSignal ? 1 : 0;
+      const bFull = b.frontendSignal && b.backendSignal ? 1 : 0;
+      if (aFull !== bFull) return bFull - aFull;
+      if (b.score !== a.score) return b.score - a.score;
+      return new Date(b.repo.pushed_at) - new Date(a.repo.pushed_at);
+    })
     .slice(0, MAX_PROJECTS);
 
-  if (qualified.length === 0) throw new Error("No repo met the minimum score — refusing to overwrite baseline");
+  if (qualified.length === 0) throw new Error("No repo qualified — refusing to overwrite baseline");
 
   console.log(`Selected ${qualified.length} projects:`, qualified.map((q) => q.repo.name));
 
@@ -241,6 +257,14 @@ async function main() {
 
   writeFileSync(OUTPUT_JSON, JSON.stringify(results, null, 2) + "\n");
   console.log(`Wrote ${results.length} projects to ${path.relative(ROOT, OUTPUT_JSON)}`);
+
+  const keepFiles = new Set(results.map((r) => `${r.slug}.png`));
+  for (const file of readdirSync(SCREENSHOT_DIR)) {
+    if (!keepFiles.has(file)) {
+      unlinkSync(path.join(SCREENSHOT_DIR, file));
+      console.log(`Removed stale screenshot ${file}`);
+    }
+  }
 }
 
 main().catch((err) => {
