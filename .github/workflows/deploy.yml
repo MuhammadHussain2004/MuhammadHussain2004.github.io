@@ -7,7 +7,10 @@ on:
   schedule:
     # Re-scores every public repo daily so a new (or newly-improved) project
     # can automatically enter the showcase without a push to this repo.
-    - cron: "0 3 * * *"
+    # Runs 30 min after MuhammadHussain2004/resume's own 03:00 UTC sync
+    # (same cron expression) so this always picks up that day's freshly
+    # updated resume instead of racing it.
+    - cron: "30 3 * * *"
 
 permissions:
   contents: read
