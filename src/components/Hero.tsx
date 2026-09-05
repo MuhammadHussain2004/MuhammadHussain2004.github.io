@@ -112,7 +112,9 @@ export default function Hero() {
               <p className="text-muted">
                 <span className="text-accent">$</span> cat role.txt
               </p>
-              <p className="text-ink">Software Engineer — Full-Stack / MERN, Karachi 🇵🇰</p>
+              <p className="text-ink">
+                {profile.role} — {profile.secondaryRoles.join(" / ")}, {profile.location} 🇵🇰
+              </p>
               <p className="text-muted">
                 <span className="text-accent">$</span> cat stack.json
               </p>

@@ -45,6 +45,11 @@ jobs:
       - name: Sync latest resume PDF
         run: npm run sync:resume
 
+      - name: Sync site content from resume via Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run sync:content
+
       - name: Build
         run: npm run build
 

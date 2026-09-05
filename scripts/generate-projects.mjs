@@ -204,6 +204,12 @@ async function main() {
     }
   }
 
+  // Ground-truth "shipped full-stack apps" count — every live repo with
+  // real evidence of both a frontend and a backend, not just the 6 shown
+  // in the showcase. Drives an About-section stat with no LLM involved.
+  const fullStackRepoCount = scored.filter((s) => s.frontendSignal && s.backendSignal).length;
+  console.log(`${fullStackRepoCount} live repos have real full-stack signal.`);
+
   // Genuinely full-stack repos (both a frontend and a backend detected)
   // always rank ahead of everything else. Only if there aren't enough of
   // those to fill every slot does a live, decent-scoring but not-fully-
@@ -274,7 +280,7 @@ async function main() {
   // Drives the "public repositories" stat on the About section — sourced
   // live from GitHub every run instead of a number typed once by hand,
   // which is exactly the kind of thing that goes stale.
-  writeFileSync(STATS_JSON, JSON.stringify({ publicRepos: repos.length }, null, 2) + "\n");
+  writeFileSync(STATS_JSON, JSON.stringify({ publicRepos: repos.length, fullStackRepoCount }, null, 2) + "\n");
   console.log(`Wrote publicRepos=${repos.length} to ${path.relative(ROOT, STATS_JSON)}`);
 
   const keepFiles = new Set(results.map((r) => `${r.slug}.png`));

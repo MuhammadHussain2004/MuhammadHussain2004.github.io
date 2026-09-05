@@ -4,10 +4,10 @@ import SectionHeading from "./SectionHeading";
 import { profile, stats } from "../data";
 
 const facts = [
-  { icon: MapPinned, label: "Based in", value: "Karachi, Pakistan" },
-  { icon: GraduationCap, label: "Education", value: "BSCS, Sindh Madressatul Islam University" },
-  { icon: Layers, label: "Focus", value: "Software Engineering · Full-Stack MERN" },
-  { icon: Sparkles, label: "Currently", value: "SMIT — Modern Web & App Dev" },
+  { icon: MapPinned, label: "Based in", value: profile.quickFacts.basedIn },
+  { icon: GraduationCap, label: "Education", value: profile.quickFacts.education },
+  { icon: Layers, label: "Focus", value: profile.quickFacts.focus },
+  { icon: Sparkles, label: "Currently", value: profile.quickFacts.currently },
 ];
 
 export default function About() {
